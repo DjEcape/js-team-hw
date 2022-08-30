@@ -1,6 +1,6 @@
-import './js/makeModal';
+/* import './js/makeModal'; */
 import preloader from './js/preloader.js';
-import dropDown from './js/choose-country-scroll.js'
+import dropDown from './js/choose-country-scroll.js';
 import getEvens from './js/getEvents';
 import temlateCards from './templates/temlateCards.hbs';
 import debounce from 'lodash.debounce';
@@ -101,7 +101,7 @@ async function renderEvents(page = 0) {
       totalPages =
         response.page.totalPages > 50 ? 50 : response.page.totalPages;
       renderPagination(totalPages, renderEvents);
-      }
+    }
   } catch (error) {
     console.log(error);
   }
