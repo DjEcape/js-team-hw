@@ -4,18 +4,16 @@ import axios from 'axios';
 import getEvens from './getEvents';
 
 const refs = {
-
   eventList: document.querySelector('.js-event-list'),
 
   modalContainer: document.querySelector('.js-modal'),
   closeModalBtn: document.querySelector('.js-modal-close-btn'),
 };
 
-
 function getIdOnClickEventImg(e) {
   eventId = e.target.id;
   console.log(e.target.id);
-
+}
 refs.eventList.addEventListener('click', onOpenModal);
 /* refs.closeModalBtn.addEventListener('click', onCloseModalBtn); */
 
@@ -36,7 +34,6 @@ function getEventByID(eventId) {
   console.log(eventId);
 }
 
-
 async function onOpenModal(e) {
   if (e.target.nodeName !== 'IMG') return;
 
@@ -55,6 +52,3 @@ function onCloseModalBtn() {
   document.body.classList.remove('no-scroll');
   refs.modalContainer.classList.add('is-hidden');
 }
-
-
-
