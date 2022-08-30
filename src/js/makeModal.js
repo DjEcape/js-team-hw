@@ -11,20 +11,17 @@ const refs = {
 };
 
 function getIdOnClickEventImg(e) {
-  eventId = e.target.id;
-  console.log(e.target.id);
-  return eventId;
-}
-
-function getEventByID(eventId) {
-  console.log(eventId);
-}
+  let eventTarget = e.target.parentNode;
+  let idElement = eventTarget.id; 
+  console.log(idElement);
+  return idElement;
+}  
 
 export async function onOpenModal(e) {
-  if (e.target.nodeName !== 'IMG' & 'h3') return;
-  console.log(e.target);
+  
+  if (!e.target.closest('article')) return;
   getIdOnClickEventImg(e);
-  getEventByID(eventId);
+  // getEventByID(eventId);
 
   refs.modalContainer.innerHTML = doModal();
   refs.modalContainer.classList.remove('is-hidden');
